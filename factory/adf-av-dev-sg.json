@@ -1,0 +1,9 @@
+{
+	"name": "adf-av-dev-sg",
+	"location": "australiasoutheast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "31be8610-a822-4b23-962e-085ff1f72e2f",
+		"tenantId": "eb9a11c9-2b17-433f-a92a-082448eedeef"
+	}
+}
