@@ -28,7 +28,7 @@
 				}
 			},
 			{
-				"name": "Wait2_copy1",
+				"name": "Wait3",
 				"type": "Wait",
 				"dependsOn": [
 					{
@@ -48,7 +48,7 @@
 				"type": "Wait",
 				"dependsOn": [
 					{
-						"activity": "Wait2_copy1",
+						"activity": "Wait3",
 						"dependencyConditions": [
 							"Completed"
 						]
