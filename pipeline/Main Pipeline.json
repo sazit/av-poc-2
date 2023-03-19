@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "Main Pipeline",
 	"properties": {
 		"activities": [
 			{
@@ -30,7 +30,14 @@
 			{
 				"name": "Copy data1",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Wait2",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -84,38 +91,6 @@
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "Wait3",
-				"type": "Wait",
-				"dependsOn": [
-					{
-						"activity": "Wait2",
-						"dependencyConditions": [
-							"Completed"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"waitTimeInSeconds": 1
-				}
-			},
-			{
-				"name": "Wait4",
-				"type": "Wait",
-				"dependsOn": [
-					{
-						"activity": "Wait3",
-						"dependencyConditions": [
-							"Completed"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"waitTimeInSeconds": 1
-				}
 			}
 		],
 		"annotations": [],
