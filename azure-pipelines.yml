@@ -53,3 +53,11 @@ steps:
     targetPath: '$(Build.Repository.LocalPath)/build/ArmTemplate' #replace with the package.json folder
     artifact: 'ArmTemplates'
     publishLocation: 'pipeline'
+
+# Publish build artifacts v1
+# Publish build artifacts to Azure Pipelines or a Windows file share.
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop' 
+    publishLocation: 'Container' 
