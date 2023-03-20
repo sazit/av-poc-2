@@ -1,0 +1,9 @@
+{
+	"name": "adf-av-tst-sg",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "adac24c3-bf18-429d-836d-7d7f2f4ee1ac",
+		"tenantId": "eb9a11c9-2b17-433f-a92a-082448eedeef"
+	}
+}
