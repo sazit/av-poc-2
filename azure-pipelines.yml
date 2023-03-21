@@ -51,13 +51,31 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Build.Repository.LocalPath)/build/ArmTemplate' #replace with the package.json folder
-    artifact: 'ArmTemplates'
+    artifact: 'ArmTemplatesLP'
     publishLocation: 'pipeline'
 
-# Publish build artifacts v1
-# Publish build artifacts to Azure Pipelines or a Windows file share.
-- task: PublishBuildArtifacts@1
+- task: PublishPipelineArtifact@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop' 
-    publishLocation: 'Container' 
+    targetPath: '$(Build.ArtifactStagingDirectory)/build/ArmTemplate' #replace with the package.json folder
+    artifact: 'ArmTemplatesSD'
+    publishLocation: 'pipeline'
+  
+  
+# - task: PublishPipelineArtifact@1
+#   displayName: 'Publish'
+#   inputs:
+#     targetPath: $(Build.ArtifactStagingDirectory)/**
+#     ${{ if eq(variables['Build.SourceBranchName'], 'main') }}:
+#         artifactName: 'prod'
+#     ${{ else }}:
+#         artifactName: 'dev'
+#     artifactType: 'pipeline'
+
+
+# # Publish build artifacts v1
+# # Publish build artifacts to Azure Pipelines or a Windows file share.
+# - task: PublishBuildArtifacts@1
+#   inputs:
+#     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+#     ArtifactName: 'drop' 
+#     publishLocation: 'Container' 
